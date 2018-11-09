@@ -29,6 +29,7 @@ def login():
         print('Cant Detect Login Screen!')
 
 def enterPortal():
+    count = 0
     while count < 100:
         count += 1
         nice = pyautogui.locateOnScreen('portal.png', grayscale = False, confidence = 0.6)
@@ -51,6 +52,7 @@ def checkInGame():
         time.sleep(random.randint(1000,2000)*0.01)
 
 def getOut():
+    count = 0
     while count < 100:
         count += 1
         sara = pyautogui.locateOnScreen('sara.png', grayscale = False, confidence = 0.7)
@@ -66,9 +68,9 @@ def getOut():
             print('Found Zammy Door')
             break
         else:
-            print('Finding Portal...')
+            print('Finding Door...')
         random.randint(10,20)*0.01
-    print('Portal Not Found.')
+    print('Door Not Found.')
 
 def Idle():
     while True:
@@ -79,7 +81,7 @@ def Idle():
         nice = pyautogui.locateOnScreen('sidebar.png', grayscale = False)
         if nice == None:
             break
-        time.sleep(random.randint(20000,24000)*0.01)
+        time.sleep(random.randint(10000,20000)*0.01)
 
 if __name__ == "__main__":
     login()
